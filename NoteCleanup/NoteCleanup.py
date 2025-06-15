@@ -511,6 +511,9 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         # Skip over these tags
         ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
                     r'</a>|</i>|</b>|</u>|<a>'),
+        ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
+                    r'</a>|</i>|</b>|</u>|<a>|</span>|<strong>|</strong>|<em>|</em>|'\
+                    r'<span[^>]*?>')
         # Unimplemented HTTP tags
         ('UNKNWN',  r'<[^<]*?>'), ]
     tok_regex = '|'.join('(?P<%s>%s)' % pair for
